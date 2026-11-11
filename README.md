@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Sacrament Meeting Planner
 
-## Getting Started
+A web application built with Next.js and TypeScript to help organize, manage, and view sacrament meeting programs.
 
-First, run the development server:
+Project Overview
 
-```bash
+The Sacrament Meeting Planner is designed to make it easier to organize Sunday sacrament meetings. It provides a structured way to manage meeting details, including hymns, prayers, announcements, speakers, and other program information.
+
+Planned Features
+
+View a list of scheduled sacrament meetings.
+
+View individual meeting programs and details.
+
+Organize meeting information, including hymns, prayers, and speakers.
+
+Support different meeting types.
+
+View the current meeting.
+
+Print meeting programs for convenient use.
+
+Technologies
+
+Next.js – React framework for building the application.
+
+TypeScript – Type-safe application development.
+
+Tailwind CSS – Styling and responsive layouts.
+
+React – Component-based user interface development.
+
+Getting Started
+
+1. Clone the repository
+
+git clone https://github.com/nobiaya/sacrament-meetings.git
+
+2. Navigate to the project directory
+
+cd sacrament-meetings
+
+3. Install dependencies
+
+npm install
+
+4. Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+sacrament-meetings/
+├── app/
+│   ├── api/
+│   ├── meetings/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+├── data/
+├── public/
+└── README.md
 
-## Learn More
+Development
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is being developed as part of the WDD 430 Web Full-Stack Development course.
