@@ -2,6 +2,7 @@
 import { Suspense } from "react";
 import MeetingDetail from "@/components/MeetingDetail";
 import type { SacramentMeeting } from "@/lib/types";
+import { getBaseUrl } from "@/lib/base-url";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -11,7 +12,7 @@ interface MeetingPageProps {
 
 async function getMeeting(id: string): Promise<SacramentMeeting | null> {
   const response = await fetch(
-    `http://localhost:3000/api/meetings/${id}`,
+    `${getBaseUrl()}/api/meetings/${id}`,
     { cache: "no-store" }
   );
 

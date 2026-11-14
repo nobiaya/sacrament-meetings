@@ -1,5 +1,7 @@
+
 import { connection } from "next/server";
 import { redirect } from "next/navigation";
+import { getBaseUrl } from "@/lib/base-url";
 
 function getMostRecentSunday(): string {
   const today = new Date();
@@ -16,13 +18,12 @@ function getMostRecentSunday(): string {
 }
 
 export default async function CurrentMeetingPage() {
-  // Wait until request time before using the current date.
   await connection();
 
   const date = getMostRecentSunday();
 
   const response = await fetch(
-    `http://localhost:3000/api/meetings?date=${date}`,
+    `${getBaseUrl()}/api/meetings?date=${date}`,
     { cache: "no-store" }
   );
 
