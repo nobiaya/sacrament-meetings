@@ -18,12 +18,12 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
 
   return (
     <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md">
-      <div className="mb-3 flex items-center justify-between gap-3">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold capitalize text-blue-700">
           {meeting.meetingType} meeting
         </span>
 
-        <span className="text-sm text-gray-500">
+        <span className="min-w-0 text-sm text-gray-500 text-right">
           {formattedDate}
         </span>
       </div>

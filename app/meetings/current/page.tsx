@@ -1,37 +1,27 @@
 
 import { connection } from "next/server";
 import { redirect } from "next/navigation";
-import { getBaseUrl } from "@/lib/base-url";
+import { getMeetings } from "@/lib/meetings-db";
 
 function getMostRecentSunday(): string {
   const today = new Date();
-  const day = today.getDay();
+  const dayOfWeek = today.getDay();
 
   const sunday = new Date(today);
-  sunday.setDate(today.getDate() - day);
+  sunday.setDate(today.getDate() - dayOfWeek);
 
-  const year = sunday.getFullYear();
-  const month = String(sunday.getMonth() + 1).padStart(2, "0");
-  const date = String(sunday.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${date}`;
+  return [
+    sunday.getFullYear(),
+    String(sunday.getMonth() + 1).padStart(2, "0"),
+    String(sunday.getDate()).padStart(2, "0"),
+  ].join("-");
 }
 
 export default async function CurrentMeetingPage() {
   await connection();
 
   const date = getMostRecentSunday();
-
-  const response = await fetch(
-    `${getBaseUrl()}/api/meetings?date=${date}`,
-    { cache: "no-store" }
-  );
-
-  if (!response.ok) {
-    throw new Error("Failed to find the current meeting");
-  }
-
-  const meetings = await response.json();
+  const meetings = getMeetings(date);
 
   if (meetings.length > 0) {
     redirect(`/meetings/${meetings[0].id}`);
