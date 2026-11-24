@@ -6,6 +6,13 @@ interface MeetingCardProps {
   meeting: SacramentMeeting;
 }
 
+const meetingTypeLabels: Record<string, string> = {
+  regular: "Regular Meeting",
+  testimony: "Testimony Meeting",
+  stake: "Stake Meeting",
+  general: "General Meeting",
+};
+
 export default function MeetingCard({ meeting }: MeetingCardProps) {
   const formattedDate = new Date(
     `${meeting.date}T12:00:00`
@@ -16,34 +23,34 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
     day: "numeric",
   });
 
+  const meetingType =
+    meetingTypeLabels[meeting.meetingType] ?? "Meeting";
+
   return (
-    <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold capitalize text-blue-700">
-          {meeting.meetingType} meeting
+    <article className="flex min-h-[206px] flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <span className="shrink-0 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+          {meetingType}
         </span>
 
-        <span className="min-w-0 text-sm text-gray-500 text-right">
+        <time className="text-right text-sm text-gray-500">
           {formattedDate}
-        </span>
+        </time>
       </div>
 
       <h2 className="mb-2 text-xl font-bold text-gray-900">
         Sacrament Meeting
       </h2>
 
-      <p className="text-sm text-gray-600">
-        Presiding: {meeting.presiding}
-      </p>
-
-      <p className="mb-4 text-sm text-gray-600">
-        Conducting: {meeting.conducting}
-      </p>
+      <div className="text-sm leading-5 text-gray-700">
+        <p>Presiding: {meeting.presiding}</p>
+        <p>Conducting: {meeting.conducting}</p>
+      </div>
 
       <Link
-        href={`/meetings/${meeting.id}`}
+        href={`/public/meetings/${meeting.id}`}
         aria-label={`View meeting programme for ${formattedDate}`}
-        className="inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="mt-4 inline-flex h-9 w-fit items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
       >
         View Meeting
       </Link>

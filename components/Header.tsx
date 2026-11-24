@@ -45,7 +45,7 @@ export default function Header() {
         <Suspense
           fallback={
             <nav aria-label="Main navigation" className="flex gap-5">
-              <Link href="/meetings">Meetings</Link>
+              <Link href="/public/meetings">Meetings</Link>
             </nav>
           }
         >

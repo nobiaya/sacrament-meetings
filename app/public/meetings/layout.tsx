@@ -10,14 +10,14 @@ export default function MeetingsLayout({
     <section className="space-y-6">
       <nav className="flex flex-wrap gap-4 border-b border-gray-200 pb-4">
         <Link
-          href="/meetings"
+          href="/public/meetings"
           className="font-medium text-blue-600 hover:text-blue-800"
         >
           All Meetings
         </Link>
 
         <Link
-          href="/meetings/current"
+          href="/public/meetings/current"
           className="font-medium text-blue-600 hover:text-blue-800"
         >
           Current Meeting

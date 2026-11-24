@@ -23,9 +23,9 @@ export default async function CurrentMeetingPage() {
   const date = getMostRecentSunday();
   const meetings = getMeetings(date);
 
-  if (meetings.length > 0) {
-    redirect(`/meetings/${meetings[0].id}`);
+  if ((await meetings).length > 0) {
+    redirect(`/public/meetings/${(await meetings)[0].id}`);
   }
 
-  redirect("/meetings");
+  redirect("/public/meetings");
 }

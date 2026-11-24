@@ -17,7 +17,7 @@ async function MeetingContent({ params }: MeetingPageProps) {
     notFound();
   }
 
-  const meeting = getMeetingById(meetingId);
+  const meeting = await getMeetingById(meetingId);
 
   if (!meeting) {
     notFound();
@@ -26,13 +26,13 @@ async function MeetingContent({ params }: MeetingPageProps) {
   return (
     <section>
       <Link
-        href="/meetings"
+        href="/public/meetings"
         className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
       >
         ← Back to Meetings
       </Link>
 
-      <MeetingDetail meeting={meeting} />
+      <MeetingDetail meeting={await meeting} />
     </section>
   );
 }

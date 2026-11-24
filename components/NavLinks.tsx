@@ -9,8 +9,8 @@ export default function NavLinks() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/meetings", label: "Meetings" },
-    { href: "/meetings/current", label: "Current Meeting" },
+    { href: "/public/meetings", label: "Meetings" },
+    { href: "/public/meetings/current", label: "Current Meeting" },
   ];
 
   return (
@@ -18,8 +18,8 @@ export default function NavLinks() {
       {links.map((link) => {
         const isActive =
           pathname === link.href ||
-          (link.href === "/meetings" &&
-            pathname.startsWith("/meetings/"));
+          (link.href === "/public/meetings" &&
+            pathname.startsWith("/public/meetings/"));
 
         return (
           <Link
