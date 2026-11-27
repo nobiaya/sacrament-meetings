@@ -24,8 +24,8 @@ export default async function CurrentMeetingPage() {
   const meetings = getMeetings(date);
 
   if ((await meetings).length > 0) {
-    redirect(`/public/meetings/${(await meetings)[0].id}`);
+    redirect(`/meetings/${(await meetings)[0].id}`);
   }
 
-  redirect("/public/meetings");
+  redirect("/meetings");
 }

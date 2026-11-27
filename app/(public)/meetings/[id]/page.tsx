@@ -26,7 +26,7 @@ async function MeetingContent({ params }: MeetingPageProps) {
   return (
     <section>
       <Link
-        href="/public/meetings"
+        href="/meetings"
         className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
       >
         ← Back to Meetings

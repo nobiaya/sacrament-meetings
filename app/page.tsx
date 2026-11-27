@@ -17,14 +17,14 @@ export default function HomePage() {
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Link
-          href="/public/meetings"
+          href="/meetings"
           className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
         >
           View Meetings
         </Link>
 
         <Link
-          href="/public/meetings/current"
+          href="/meetings/current"
           className="rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition hover:bg-gray-100"
         >
           Current Meeting

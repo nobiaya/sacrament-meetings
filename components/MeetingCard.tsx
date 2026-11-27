@@ -48,7 +48,7 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
       </div>
 
       <Link
-        href={`/public/meetings/${meeting.id}`}
+        href={`/meetings/${meeting.id}`}
         aria-label={`View meeting programme for ${formattedDate}`}
         className="mt-4 inline-flex h-9 w-fit items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
       >
